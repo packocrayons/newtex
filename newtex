@@ -1,0 +1,69 @@
+if [ -z "$1" ]
+then
+	echo "Needs input filename"
+	exit 1
+fi
+
+cat << EOF > "$1"
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+%\usepackage[version=3]{mhchem}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[binary-units=true]{siunitx}
+\usepackage{color}
+\usepackage[siunitx]{circuitikz}
+\usepackage{amsthm}
+\usepackage[explicit]{titlesec}
+%\usepackage{biblatex}
+%\addbibresource{bib.bib}
+
+\setlength{\parindent}{0pt}
+\sisetup{separate-uncertainty=true}
+\sisetup{per-mode=symbol}
+\theoremstyle{definition}
+\newtheorem{exmp}{Example}[subsection]
+\newtheorem{defn}{Definition}[subsection]
+\newtheorem{qu}{Question}[subsection]
+\newtheorem{ans}{Answer}[qu]
+
+\titleformat{\section}{\normalfont\Large\bfseries}{}{0em}{#1\ \thesection}
+\DeclareMathOperator{\sinc}{sinc}
+
+
+% \newcommand\doublefig[6]{%
+% \begin{figure}[htbp]
+% 	\centering
+% \begin{minipage}{0.49\textwidth}
+% 	% \begin{figure}[!ht]
+% 		% \centering
+% 		\includegraphics[width=1\textwidth]{#1}
+% 		\label{#2}
+% 	% \end{figure}
+% \end{minipage}
+% \begin{minipage}{0.49\textwidth}
+% 	% \begin{figure}[htbp]
+% 		% \centering
+% 		\includegraphics[width=1\textwidth]{#3}
+% 		\label{#4}
+% \end{minipage}
+% \label{#6}
+% \caption{#5}
+
+% \end{figure}
+% }
+
+\title{}
+\author{Brydon Gibson(100975274)}
+
+\begin{document}
+\maketitle
+
+
+%\printbibliography
+
+\end{document}
+EOF
